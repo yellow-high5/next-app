@@ -1,7 +1,10 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Link from 'next/link';
+import React from 'react';
 
-export default function Home() {
+import styles from '../styles/Home.module.css';
+
+const Home = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,6 +16,14 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <ul>
+          <li>
+            <Link href="/sample">
+              <a>Sample</a>
+            </Link>
+          </li>
+        </ul>
 
         <p className={styles.description}>
           Get started by editing{' '}
@@ -63,3 +74,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;
