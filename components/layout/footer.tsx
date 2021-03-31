@@ -1,18 +1,19 @@
+import { Image } from '@chakra-ui/image';
+import { Center } from '@chakra-ui/layout';
+import Link from 'next/link';
 import React from 'react';
-
-import styles from '../../styles/Home.module.css';
 
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <a
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-      </a>
+    <footer>
+      <Center>
+        <Link
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+        >
+          <Image src="/vercel.svg" boxSize="100px" alt="Vercel Logo" />
+        </Link>
+      </Center>
     </footer>)
 }
 
