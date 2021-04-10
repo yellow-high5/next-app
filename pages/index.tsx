@@ -30,13 +30,15 @@ const App = () => {
           <Link href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
             <Box>
               <Text fontSize="3xl">Deploy &rarr;</Text>
-              <Text fontSize="md">Instantly deploy your Next.js site to a public URL with Vercel.</Text>
+              <Text fontSize="md">
+                Instantly deploy your Next.js site to a public URL with Vercel.
+              </Text>
             </Box>
           </Link>
         </Grid>
       </Box>
     </Layout>
-  )
-}
+  );
+};
 
 export default App;

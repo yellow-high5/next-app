@@ -4,8 +4,8 @@ import Head from 'next/head';
 import Footer from './footer';
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const Layout = ({ children }: Props) => {
   return (
@@ -15,13 +15,11 @@ const Layout = ({ children }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Center>
-          {children}
-        </Center>
+        <Center>{children}</Center>
       </main>
       <Footer />
     </ChakraProvider>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
