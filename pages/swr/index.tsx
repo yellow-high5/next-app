@@ -45,14 +45,15 @@ const Swr = () => {
     'users/yellow-high5/repos?sort=updated',
     fetcher,
   );
+  const { data: commits, error: commitsError } = useSWR('commits/yellow-high5', fetcher);
   const language_map = generateLanguageMap(repositories);
 
   const renderLabel = (entry: any) => {
     return `${entry.value}KB`;
   };
 
-  if (userError || repositoriesError) return <div>failed to load</div>;
-  if (!user || !repositories) return <div>loading...</div>;
+  if (userError || repositoriesError || commitsError) return <div>failed to load</div>;
+  if (!user || !repositories || !commits) return <div>loading...</div>;
 
   return (
     <Layout>
@@ -87,8 +88,12 @@ const Swr = () => {
             </Pie>
           </PieChart>
         </Box>
-        {/* <pre>{JSON.stringify(user,null, "\t")}</pre>
-        <pre>{JSON.stringify(repositories, null, 2)}</pre> */}
+        <pre>
+          {JSON.stringify(user, null, 2)}
+          {JSON.stringify(repositories, null, 2)}
+          {JSON.stringify(commits, null, 2)}
+        </pre>
+        {/* <pre>{JSON.stringify(language_map, null, 2)}</pre> */}
       </Flex>
     </Layout>
   );
